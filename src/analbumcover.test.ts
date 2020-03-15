@@ -10,6 +10,20 @@ describe('rephrase', () => {
 		spelling = new Spelling.NodehunSpelling(nodehun)
 	})
 
+	describe('error-handling', () => {
+		test('throws errors if word length is -1', () => {
+			expect(() => rephrase('elegant milk tea', spelling, 0)).toThrow()
+		})
+
+		test('throws errors if word length is 0', () => {
+			expect(() => rephrase('elegant milk tea', spelling, 0)).toThrow()
+		})
+
+		test('does not throw errors if word length is 1', () => {
+			expect(() => rephrase('elegant milk tea', spelling, 1)).not.toThrow()
+		})
+	})
+
 	WORD_LIST.forEach((wordConfig : TestConfig) => {
 		const { expected, word } = wordConfig
 
@@ -17,6 +31,12 @@ describe('rephrase', () => {
 			for (let wordLength = 1; wordLength <= 3; wordLength++) {
 				test(`midWordLength = ${wordLength}`, () => {
 					expect(rephrase(word, spelling, wordLength)).toBe(expected[wordLength])
+				})
+			}
+
+			for (let wordLength = 4; wordLength <= 10; wordLength++) {
+				test(`midWordLength = ${wordLength}`, () => {
+					expect(rephrase(word, spelling, wordLength)).toBe(null)
 				})
 			}
 		})
