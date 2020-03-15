@@ -25,9 +25,9 @@ describe('rephrase', () => {
 	})
 
 	WORD_LIST.forEach((wordConfig : TestConfig) => {
-		const { expected, word } = wordConfig
+		const { expected, glyph, word } = wordConfig
 
-		describe(`word: "${word}"`, () => {
+		describe(`word: "${word}" ${glyph}`, () => {
 			for (let wordLength = 1; wordLength <= 3; wordLength++) {
 				test(`midWordLength = ${wordLength}`, () => {
 					expect(rephrase(word, spelling, wordLength)).toBe(expected[wordLength])
