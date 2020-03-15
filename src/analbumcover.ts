@@ -36,7 +36,7 @@ const buildPhrase = (
     if (spelling.isCorrect(possibleWord)) {
       newPhrase += possibleWord + ''
       var newPhrase1 = buildPhrase(phrase.substring(counter), spelling, minWordLength, counter, newPhrase)
-      if (newPhrase1 == '')
+      if (newPhrase1 == '') {
         return buildPhrase(phrase, spelling, minWordLength, counter + 1, newPhrase)
       } else {
         return newPhrase1
