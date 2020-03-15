@@ -1,0 +1,53 @@
+{
+  "name": "analbumcover",
+  "version": "0.0.1",
+  "description": "Telefactor: analbumcover - Reference implementation",
+  "main": "dist/main.js",
+  "bin": {
+    "analbumcover": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "cli": "ts-node --files ./src/cli.ts",
+    "install-analbumcover": "npm run build && npm unlink && npm link",
+    "lint": "eslint --fix --cache './src/**'",
+    "ndb": "ndb ./dist/cli.js",
+    "shell": "ts-node",
+    "test": "jest",
+    "test-watch": "jest --watch",
+    "watch": "tsc-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssangervasi/telefactor_analbumcover_00.git"
+  },
+  "author": "Sebastian Sangervasi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ssangervasi/telefactor_analbumcover_00/issues"
+  },
+  "homepage": "https://github.com/ssangervasi/telefactor_analbumcover_00#readme",
+  "dependencies": {
+    "acorn": "^7.1.0",
+    "commander": "^4.0.1",
+    "dictionary-en-us": "^2.1.1",
+    "nodehun": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.4",
+    "@types/jest": "^24.0.23",
+    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "@typescript-eslint/parser": "^2.10.0",
+    "eslint": "^6.7.2",
+    "jest": "^24.9.0",
+    "ndb": "^1.1.5",
+    "rimraf": "^2.7.1",
+    "ts-jest": "^24.2.0",
+    "ts-loader": "^6.0.4",
+    "ts-node": "8.1.0",
+    "tsc-watch": "2.2.1",
+    "tsconfig-paths": "3.8.0",
+    "tslint": "5.16.0",
+    "typescript": "^3.6.2"
+  }
+}
