@@ -1,0 +1,2 @@
+# temporary eslintignore file so i don't nuke the code with linting
+src/analbumcover.ts
