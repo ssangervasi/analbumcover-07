@@ -1,6 +1,6 @@
 import {
 	rephrase,
-} from './analbumcover';
+} from './analbumcover'
 
 
 describe('rephrase', () => {
