@@ -1,5 +1,6 @@
-import * as Spelling from './spelling'
 import { rephrase } from './analbumcover'
+import * as Spelling from './spelling'
+import { TestConfig, WORD_LIST } from './testconfig'
 
 describe('rephrase', () => {
 	let spelling : Spelling.Spelling
@@ -9,47 +10,15 @@ describe('rephrase', () => {
 		spelling = new Spelling.NodehunSpelling(nodehun)
 	})
 
-	// const TEST_WORDS = Object.freeze(['', 'an elegant milk tea', 'an album cover', 'hotdog', 'not hotdog']);
+	WORD_LIST.forEach((wordConfig : TestConfig) => {
+		const { expected, word } = wordConfig
 
-	describe('min word length = 1', () => {
-		test('it should have zenlike empty spaces', () => {
-			expect(rephrase('', spelling, 1)).toBe(null)
-		})
-
-		test('it should do a thing', () => {
-			expect(rephrase('do a thing', spelling, 1)).toBe('doathing')
-		})
-
-		test('it should have album covers', () => {
-			expect(rephrase('an album cover', spelling, 1)).toBe('analbumcover')
-		})
-	})
-
-	describe('min word length = 2', () => {
-		test('it should have zenlike empty spaces', () => {
-			expect(rephrase('', spelling, 2)).toBe(null)
-		})
-
-		test('it should do a thing', () => {
-			expect(rephrase('do a thing', spelling, 2)).toBe(null)
-		})
-
-		test('it should have album covers', () => {
-			expect(rephrase('an album cover', spelling, 2)).toBe(null)
-		})
-	})
-
-	describe('min word length = 3', () => {
-		test('it should have zenlike empty spaces', () => {
-			expect(rephrase('', spelling, 3)).toBe(null)
-		})
-
-		test('it should do a thing', () => {
-			expect(rephrase('do a thing', spelling, 3)).toBe(null)
-		})
-
-		test('it should have album covers', () => {
-			expect(rephrase('an album cover', spelling, 3)).toBe(null)
+		describe(`word: "${word}"`, () => {
+			for (let wordLength = 1; wordLength <= 3; wordLength++) {
+				test(`midWordLength = ${wordLength}`, () => {
+					expect(rephrase(word, spelling, wordLength)).toBe(expected[wordLength])
+				})
+			}
 		})
 	})
 })
