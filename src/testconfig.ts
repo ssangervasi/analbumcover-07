@@ -12,6 +12,7 @@ const TEA_ = String.fromCharCode(55356, 57205)
 const WORD_LIST : Array<TestConfig> = [
 	{ glyph: NOPE, word: '', expected: {1: null, 2: null, 3: null} },
 	{ glyph: NOPE, word: 'μ', expected: {1: null, 2: null, 3: null} },
+	{ glyph: NOPE, word: '子犬', expected:{1: null, 2: null, 3: null} },
 	{ glyph: NOPE, word: 'asdfgh', expected: {1: 'asdfgh', 2: null, 3: null} },
 	{ glyph: TEA_, word: 'tea', expected: {1: 'tea', 2: 'tea', 3: 'tea'} },
 	{ glyph: TEA_, word: 'milktea', expected: {1: 'milktea', 2: null, 3: null} },
