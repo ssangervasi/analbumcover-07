@@ -1,6 +1,6 @@
 {
   "name": "analbumcover",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Telefactor: analbumcover - Reference implementation",
   "main": "dist/main.js",
   "bin": {
