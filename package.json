@@ -10,11 +10,11 @@
     "build": "rimraf dist && tsc",
     "cli": "ts-node --files ./src/cli.ts",
     "install-analbumcover": "npm run build && npm unlink && npm link",
-    "lint": "./node_modules/.bin/eslint --fix --cache './src/**'",
+    "lint": "eslint --fix --cache './src/**'",
     "ndb": "ndb ./dist/cli.js",
     "shell": "ts-node",
-    "test": "./node_modules/.bin/jest src/analbumcover.test.ts",
-    "test-watch": "./node_modules/.bin/jest --watch",
+    "test": "jest src/analbumcover.test.ts",
+    "test-watch": "jest --watch",
     "watch": "tsc-watch"
   },
   "repository": {
