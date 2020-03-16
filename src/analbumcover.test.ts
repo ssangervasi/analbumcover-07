@@ -33,12 +33,6 @@ describe('rephrase', () => {
 					expect(rephrase(word, spelling, wordLength)).toBe(expected[wordLength])
 				})
 			}
-
-			for (let wordLength = 4; wordLength <= 10; wordLength++) {
-				test(`midWordLength = ${wordLength}`, () => {
-					expect(rephrase(word, spelling, wordLength)).toBe(null)
-				})
-			}
 		})
 	})
 })
