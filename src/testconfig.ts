@@ -21,6 +21,7 @@ const WORD_LIST : Array<TestConfig> = [
 	{ glyph: ABCD, word: 'asdfgh', expected: {1: 'asdfgh', 2: null, 3: null} },
 	{ glyph: TEA_, word: 'tea', expected: {1: 'tea', 2: 'tea', 3: 'tea'} },
 	{ glyph: TEA_, word: ' t  e  a ', expected: {1: 'tea', 2: 'tea', 3: 'tea'} },
+	{ glyph: TEA_, word: 'T...  e...  a!', expected: {1: 'tea', 2: 'tea', 3: 'tea'} },
 	{ glyph: TEA_, word: 'milktea', expected: {1: 'milktea', 2: null, 3: null} },
 	{ glyph: DISC, word: 'analbumcover', expected: {1: 'analbumcover', 2: null, 3: null} },
 	{ glyph: HDOG, word: 'hot dog', expected: {1: 'hotdog', 2: null, 3: 'hotdog'} },
